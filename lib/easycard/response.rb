@@ -18,7 +18,7 @@ module EasyCard
       when ?U then :deposit
       when '罰款' then :fine
       when '查無交易資料' then raise EasyCard::NotFound, record[?T]
-      else raise EasyCard::Error, "未知類型: #{record[?T]}"
+      else raise EasyCard::Error, "未知類型: #{record[?T]}，#{record}"
       end
       record[?L].gsub!('<BR>', ?-)
       {type: type, datetime: record[?D], location: record[?L], balance: record[?A], amount: record[?Q]}
