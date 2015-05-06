@@ -6,11 +6,13 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    rake (0.9.6)
+    minitest (5.6.1)
+    rake (10.4.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   easycard!
-  rake (~> 0)
+  minitest (~> 5.6)
+  rake (~> 10.4)

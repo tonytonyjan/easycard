@@ -12,5 +12,6 @@ EOS
   s.homepage    = 'https://github.com/tonytonyjan/easycard'
   s.files       = Dir['lib/**/*.rb']
   s.executables = 'easycard'
-  s.add_development_dependency 'rake', '~> 0'
+  s.add_development_dependency 'rake', '~> 10.4'
+  s.add_development_dependency 'minitest', '~> 5.6'
 end
