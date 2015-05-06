@@ -1,4 +1,6 @@
-智慧卡公司對悠遊卡進行加密來禁止對卡片直接的餘額讀取功能，官方提供的查詢程式又僅支援少部分手機，且未對外開放 API 供大眾使用，[甚至有人發表了 python 版，卻仍不願開源](https://github.com/x43x61x69/Easy-Card)，十分不便。
+[![Build Status](https://travis-ci.org/tonytonyjan/easycard.svg?branch=master)](https://travis-ci.org/tonytonyjan/easycard)
+
+![](https://lh6.googleusercontent.com/-6-ErFtaeUO4/VUo3_zwW64I/AAAAAAAAE40/wZgBvNGYRSs/w2236-h618-no/Screen%2BShot%2B2015-05-06%2Bat%2B23.11.22_censored.jpg)
 
 # 安裝
 
