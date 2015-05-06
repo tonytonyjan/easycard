@@ -1,0 +1,57 @@
+#!/usr/bin/env ruby
+require 'optparse'
+require 'optparse/time'
+require 'easycard'
+
+options = {format: :table, from: Date.today << 1, to: Date.today}
+parser = OptionParser.new do |opts|
+  opts.banner = 'Usage easycard CARD_ID [options]'
+
+  opts.on('-mNUMBER', '--months=NUMBER', Float, '最近 n 月') do |n|
+    today = Date.today
+    options[:from] = today << n
+    options[:to] = today
+  end
+
+  opts.on('-dNUMBER', '--days=NUMBER', Float, '最近 n 天') do |n|
+    today = Date.today
+    options[:from] = today - n
+    options[:to] = today
+  end
+
+  opts.on('-j', '--json', '以 JSON 格式顯示') do
+    options[:format] = :json
+  end
+
+  opts.on('-y', '--yaml', '以 YAML 格式顯示') do
+    options[:format] = :yaml
+  end
+
+  opts.on('-f', '--from=YYYY/MM/DD', Time, '起始時間') do |time|
+    options[:from] = time
+  end
+
+  opts.on('-t', '--to=YYYY/MM/DD', Time, '結束時間') do |time|
+    options[:to] = time
+  end
+
+  opts.on('-h', '--help', '顯示此訊息') do |v|
+    puts opts
+    exit 0
+  end
+end
+
+parser.parse!
+
+if ARGV.empty?
+  puts parser.help
+  exit 0
+end
+
+
+begin
+  response = EasyCard.query(ARGV.first, from: options[:from], to: options[:to])
+  puts response.as(options[:format])
+rescue EasyCard::Error => e
+  $stderr.puts e.message
+end
