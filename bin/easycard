@@ -5,7 +5,7 @@ require 'easycard'
 
 options = {format: :table, from: Date.today << 1, to: Date.today}
 parser = OptionParser.new do |opts|
-  opts.banner = 'Usage easycard CARD_ID [options]'
+  opts.banner = 'Usage: easycard CARD_ID [options]'
 
   opts.on('-mNUMBER', '--months=NUMBER', Float, '最近 n 月') do |n|
     today = Date.today
