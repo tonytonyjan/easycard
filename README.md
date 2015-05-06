@@ -41,5 +41,5 @@ response.to_s     # 表格字串
 response.to_json  # JSON 格式的字串
 response.to_yaml  # YAML 格式的字串
 
-EasyCard.query CARD_NUMBER, from: Date.today-30, to: Date.today, format: :json
+EasyCard.query CARD_NUMBER, from: Date.today-30, to: Date.today
 ```

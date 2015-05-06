@@ -15,7 +15,7 @@ module EasyCard
 
   module_function
 
-  def query cart_number, from: Date.today-30, to: Date.today, format: nil
+  def query cart_number, from: Date.today-30, to: Date.today
     query_hash = {
       cardID: card_id(cart_number),
       begin: from.strftime('%Y-%m-%d'),
