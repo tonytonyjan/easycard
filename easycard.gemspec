@@ -1,6 +1,7 @@
+require 'easycard/version'
 Gem::Specification.new do |s|
   s.name        = 'easycard'
-  s.version     = '1.0.0'
+  s.version     = EasyCard::VERSION
   s.licenses    = ['MIT']
   s.summary     = '台灣悠遊卡交易紀錄查詢工具/A search tool for Taiwan EasyCard'
   s.description = <<EOS
