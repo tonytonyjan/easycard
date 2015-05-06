@@ -1,3 +1,4 @@
+$: << File.join(__dir__, 'lib')
 require 'easycard/version'
 Gem::Specification.new do |s|
   s.name        = 'easycard'
