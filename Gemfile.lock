@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    easy_card (1.0.0)
+    easycard (1.0.0)
 
 GEM
   remote: https://rubygems.org/
@@ -12,5 +12,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  easy_card!
+  easycard!
   rake
