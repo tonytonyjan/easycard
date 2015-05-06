@@ -20,6 +20,7 @@ module EasyCard
       when '查無交易資料' then raise EasyCard::NotFound, record[?T]
       else raise EasyCard::Error, "未知類型: #{record[?T]}"
       end
+      record[?L].gsub!('<BR>', ?-)
       {type: type, datetime: record[?D], location: record[?L], balance: record[?A], amount: record[?Q]}
     end
 
