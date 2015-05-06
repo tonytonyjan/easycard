@@ -11,6 +11,7 @@ module EasyCard
   CONST = 8544
 
   class Error < RuntimeError; end
+  class NotFound < Error; end
 
   module_function
 

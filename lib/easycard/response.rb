@@ -16,13 +16,19 @@ module EasyCard
       type = case record[?T]
       when ?D then :withdrawal
       when ?U then :deposit
-      else raise EasyCard::Error, record[?T]
+      when '罰款' then :fine
+      when '查無交易資料' then raise EasyCard::NotFound, record[?T]
+      else raise EasyCard::Error, "未知類型: #{record[?T]}"
       end
       {type: type, datetime: record[?D], location: record[?L], balance: record[?A], amount: record[?Q]}
     end
 
     def self.type_text type
-      type == :withdrawal ? '扣款'.red.bold : '儲值'.green.bold
+      case type
+      when :withdrawal then '扣款'.red.bold
+      when :deposit then '儲值'.green.bold
+      when :fine then '罰款'.yellow.bold
+      end
     end
 
     def initialize raw_data
