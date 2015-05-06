@@ -52,7 +52,7 @@ module EasyCard
 
     def to_s
       ret = "%3s | %-17s | %s | %-3s | %-3s | %s\n" % %w[# 時間 種類 金額 餘額 地點]
-      ret << "#{?-*3} | #{?-*19} | #{?-*4} | #{?-*5} | #{?-*5} | #{?-*25}\n"
+      ret << "#{?-*3} | #{?-*19} | #{?-*4} | #{?-*5} | #{?-*5} | #{?-*20}\n"
       @data.each_with_index.map{|record, i| ret << line(i+1, record) << $/}
       ret
     end
