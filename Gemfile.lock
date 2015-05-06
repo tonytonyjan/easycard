@@ -6,11 +6,11 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    rake (10.4.2)
+    rake (0.9.6)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   easycard!
-  rake
+  rake (~> 0)
