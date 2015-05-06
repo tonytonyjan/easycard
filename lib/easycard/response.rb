@@ -10,8 +10,6 @@ module EasyCard
     attr_reader :data, :raw_data, :parsed_data, :balance
     def_delegators :@data, :to_json, :to_yaml, :to_a
 
-    using ColorString
-
     def self.normalize_record record
       type = case record[?T]
       when ?D then :withdrawal
@@ -26,9 +24,9 @@ module EasyCard
 
     def self.type_text type
       case type
-      when :withdrawal then '扣款'.red.bold
-      when :deposit then '儲值'.green.bold
-      when :fine then '罰款'.yellow.bold
+      when :withdrawal then EasyCard::ColorString.red('扣款')
+      when :deposit then EasyCard::ColorString.green('儲值')
+      when :fine then EasyCard::ColorString.yellow('罰款')
       end
     end
 

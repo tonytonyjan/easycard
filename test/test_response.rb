@@ -35,26 +35,6 @@ class TestResponse < Minitest::Test
     assert_equal expected, @response.data
   end
 
-  def test_to_json
-    assert_equal "[{\"type\":\"withdrawal\",\"datetime\":\"2015-05-04 19:56:24\",\"location\":\"中興客運\",\"balance\":\"806\",\"amount\":\"6\"},{\"type\":\"deposit\",\"datetime\":\"2015-05-01 16:34:46\",\"location\":\"國泰世華\",\"balance\":\"990\",\"amount\":\"1000\"}]", @response.to_json
-  end
-
-  def test_to_yaml
-    expected = "---
-- :type: :withdrawal
-  :datetime: '2015-05-04 19:56:24'
-  :location: \"中興客運\"
-  :balance: '806'
-  :amount: '6'
-- :type: :deposit
-  :datetime: '2015-05-01 16:34:46'
-  :location: \"國泰世華\"
-  :balance: '990'
-  :amount: '1000'
-"
-    assert_equal expected, @response.to_yaml
-  end
-
   def test_to_s
     expected = "  # | 時間                | 種類 | 金額  | 餘額  | 地點
 --- | ------------------- | ---- | ----- | ----- | --------------------
