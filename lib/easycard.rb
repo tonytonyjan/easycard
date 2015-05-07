@@ -38,7 +38,7 @@ module EasyCard
     Base64.encode64(cipher.update(data)).chop!
   end
 
-  def verify time = Time.now
+  def verify time = Time.now.localtime('+08:00')
     seed = time.month + time.day + time.hour
     Digest::MD5.hexdigest("#{seed * CONST}#{SALT}").upcase!
   end
