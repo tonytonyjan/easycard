@@ -26,7 +26,7 @@ Usage: easycard CARD_ID [options]
 $ easycard CARD_ID                         # 最近 1 個月的紀錄
 $ easycard CARD_ID -j                      # 最近 1 個月的紀錄，以 JSON 呈現
 $ easycard CARD_ID -m 3                    # 最近 3 個月的紀錄
-$ easycard CARD_ID -d 3                    # 最近 3 個月的紀錄
+$ easycard CARD_ID -d 3                    # 最近 3 天的紀錄
 $ easycard CARD_ID -f 2015/4/4 -t 2015/5/5 # 從 4 月 4 日至 5 月 5 日的紀錄
 ```
 
