@@ -2,10 +2,10 @@
 require 'optparse'
 require 'optparse/time'
 require 'easycard'
+require 'easycard/version'
 
 options = {format: :table, from: Date.today << 1, to: Date.today}
-parser = OptionParser.new do |opts|
-  opts.banner = 'Usage: easycard CARD_ID [options]'
+parser = OptionParser.new 'Usage: easycard CARD_ID [options]' do |opts|
 
   opts.on('-mNUMBER', '--months=NUMBER', Float, '最近 n 月') do |n|
     today = Date.today
@@ -35,8 +35,13 @@ parser = OptionParser.new do |opts|
     options[:to] = time
   end
 
-  opts.on('-h', '--help', '顯示此訊息') do |v|
+  opts.on('-h', '--help', '顯示此訊息') do
     puts opts
+    exit 0
+  end
+
+  opts.on('-v', '--version', '顯示版本資訊') do
+    puts EasyCard::VERSION
     exit 0
   end
 end
