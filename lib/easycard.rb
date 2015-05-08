@@ -18,8 +18,8 @@ module EasyCard
   def query cart_number, from: Date.today-30, to: Date.today
     query_hash = {
       cardID: card_id(cart_number),
-      begin: from.strftime('%Y-%m-%d'),
-      end: to.strftime('%Y-%m-%d'),
+      begin: normalize_time(from),
+      end: normalize_time(to),
       verify: verify,
       ev: 1
     }
@@ -42,4 +42,10 @@ module EasyCard
     seed = time.month + time.day + time.hour
     Digest::MD5.hexdigest("#{seed * CONST}#{SALT}").upcase!
   end
+
+  def normalize_time obj
+    time = obj.respond_to?(:strftime) ? obj : Date.parse(obj)
+    time.strftime('%Y-%m-%d')
+  end
+
 end

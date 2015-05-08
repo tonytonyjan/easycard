@@ -2,6 +2,12 @@ require 'minitest/autorun'
 require 'easycard'
 
 class TestEasyCard < Minitest::Test
+
+  def test_normalize_time
+    assert_equal '1989-11-23', EasyCard.normalize_time(Time.new(1989, 11, 23))
+    assert_equal '1989-11-23', EasyCard.normalize_time('1989/11/23')
+  end
+
   def test_verify
     assert_equal 'DBDDF375224AD0D44D196B29F5DFF388', EasyCard.verify(Time.new(1989, 11, 23, 11))
   end
