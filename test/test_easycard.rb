@@ -19,5 +19,7 @@ class TestEasyCard < Minitest::Test
     ]
     response = EasyCard.query ENV['CARD_NUMBER'], from: Time.new(2015,4,1), to: Time.new(2015,4,1)
     assert_equal expected, response.data
+  rescue SocketError
+    skip 'This run requires network, make sure you have ability to connect to internet.'
   end
 end
