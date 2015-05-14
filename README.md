@@ -1,3 +1,5 @@
+**注意：因悠遊卡公司於 5/12 關閉查詢功能，此工具已無法使用，[詳見公告](http://www.easycard.com.tw/news/event-page.aspx?id=1212)。**
+
 [![Build Status](https://travis-ci.org/tonytonyjan/easycard.svg?branch=master)](https://travis-ci.org/tonytonyjan/easycard)
 
 ![](https://lh6.googleusercontent.com/-6-ErFtaeUO4/VUo3_zwW64I/AAAAAAAAE40/wZgBvNGYRSs/w2236-h618-no/Screen%2BShot%2B2015-05-06%2Bat%2B23.11.22_censored.jpg)
